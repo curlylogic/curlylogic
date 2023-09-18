@@ -2,6 +2,8 @@ import { getBlogs } from "@sanity/sanity-utils";
 import { Blog } from "@cl/types";
 import ArticleCard from "@cl/components/ArticleCard";
 
+export const dynamic = "force-dynamic";
+
 const Home = async () => {
   const blogs = await getBlogs();
 

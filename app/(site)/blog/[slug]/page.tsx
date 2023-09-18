@@ -2,6 +2,8 @@ import BlogPage from "@cl/components/BlogPage";
 import { getBlog } from "@cl/sanity/sanity-utils";
 import { Metadata, ResolvingMetadata } from "next";
 
+export const dynamic = "force-dynamic";
+
 type Props = {
   params: {
     slug: string;
