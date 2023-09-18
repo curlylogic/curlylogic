@@ -4,7 +4,7 @@ import client from "./sanity-client";
 
 export const getBlogs = async (): Promise<Blog[]> => {
   return await client.fetch(
-    groq`*[_type=='blog']{
+    groq`*[_type=='blog'] | order(_createdAt desc){
             _id,
             _createdAt,
             _updatedAt,
