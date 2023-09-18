@@ -86,6 +86,13 @@ const blog = {
       validation: (Rule: Rule) => Rule.required(),
     },
   ],
+  orderings: [
+    {
+      title: "Published Date",
+      name: "publishedDateDesc",
+      by: [{ field: "publishedDate", direction: "desc" }],
+    },
+  ],
 };
 
 export default blog;
