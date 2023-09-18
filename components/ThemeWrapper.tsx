@@ -3,6 +3,7 @@
 import { Poppins } from "next/font/google";
 import Header from "@cl/components/Header";
 import useLocalStorage from "use-local-storage";
+import { Analytics } from "@vercel/analytics/react";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -17,6 +18,7 @@ const ThemeWrapper = ({ children }: { children: React.ReactNode }) => {
       <body className={poppins.className}>
         <Header />
         <main>{children}</main>
+        <Analytics />
       </body>
     </html>
   );
