@@ -14,7 +14,7 @@ export const getBlogs = async (): Promise<Blog[]> => {
             publishedDate,
             "slug": slug.current,
         }`,
-    { cache: "no-store" }
+    { next: { revalidate: 10 } }
   );
 };
 
