@@ -1,0 +1,10 @@
+"use client";
+
+import config from "@cl/sanity.config";
+import { NextStudio } from "next-sanity/studio";
+
+const StudioPage = () => {
+  return <NextStudio config={config} />;
+};
+
+export default StudioPage;
