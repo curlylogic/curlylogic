@@ -350,6 +350,8 @@ p:empty {
 .cl__icon {
   display: flex;
   justify-content: center;
+
+  margin-bottom: calc(var(--padding-horizontal-outer) * 2);
 }
 
 .cl__article-heading {
@@ -542,6 +544,8 @@ p:empty {
     display: flex;
     align-items: center;
     color: var(--color-gray);
+
+    text-transform: capitalize;
   }
 
   svg {

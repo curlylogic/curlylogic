@@ -4,7 +4,7 @@ import { getSnippet } from "@cl/sanity/sanity-utils";
 const Snippet = async ({ params }: { params: { slug: string } }) => {
   const snippet = await getSnippet(params.slug);
 
-  return <ArticleDetails article={snippet} />;
+  return <ArticleDetails article={snippet} backLink={"snippets"} />;
 };
 
 export default Snippet;
