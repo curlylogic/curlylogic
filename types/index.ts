@@ -1,3 +1,1 @@
-// import {Blog} from './Blog';
-
-export * from "./Blog";
+export * from "./Article";

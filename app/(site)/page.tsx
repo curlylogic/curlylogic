@@ -1,22 +1,190 @@
-import { getBlogs } from "@sanity/sanity-utils";
-import { Blog } from "@cl/types";
-import ArticleCard from "@cl/components/ArticleCard";
+import Link from "next/link";
+import Image from "next/image";
 
-export const dynamic = "force-dynamic";
-
-const Home = async () => {
-  const blogs = await getBlogs();
-
+const Home = () => {
   return (
-    <div className="cl__article-card__wrapper">
-      <div className="cl__container">
-        <section className="cl__article-card__list">
-          {blogs.map((blog: Blog) => (
-            <ArticleCard key={blog._id} blog={blog} />
-          ))}
-        </section>
-      </div>
-    </div>
+    <>
+      <section className="cl__feature-section">
+        <div className="cl__feature-box">
+          <h1 className="cl__feature-heading">
+            Navigating Your Road To Knowledge
+          </h1>
+          <p className="cl__feature-description">
+            Join us on this journey to unveil the wonders of technology, through
+            in-depth articles, insightful reviews, and real stories
+          </p>
+          <Link href={"/articles"} className="cl__feature-cta">
+            Go to Articles
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="19"
+              viewBox="0 0 22 19"
+              fill="none"
+            >
+              <path
+                d="M2 9.567H20.1608M20.1608 9.567L12.5938 2M20.1608 9.567L12.5938 17.134"
+                stroke="currentColor"
+                strokeWidth="3.0268"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </Link>
+        </div>
+        <div className="cl__feature-box cl__feature-image">
+          <Image
+            src={"/reading.svg"}
+            alt="A girl sitting on the couch, reading articles published by curlylogic.dev"
+            fill
+            priority={true}
+          />
+        </div>
+      </section>
+
+      <section className="cl__feature-section">
+        <div className="cl__feature-box cl__feature-image">
+          <Image
+            src={"/snippets.svg"}
+            alt="A developer at curlylogic working on the problems to provide easy solutions to people"
+            fill
+            priority={true}
+          />
+        </div>
+        <div className="cl__feature-box">
+          <h2 className="cl__feature-heading">
+            Modern solutions for modern problems
+          </h2>
+          <p className="cl__feature-description">
+            Embark on a journey through our treasure trove of code snippets,
+            where you will discover a wealth of practical solutions and engaging
+            interactive examples for modern challenges.
+          </p>
+          <Link className="cl__feature-cta" href={"/snippets"}>
+            Go to snippets
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="22"
+              height="19"
+              viewBox="0 0 22 19"
+              fill="none"
+            >
+              <path
+                d="M2 9.567H20.1608M20.1608 9.567L12.5938 2M20.1608 9.567L12.5938 17.134"
+                stroke="currentColor"
+                strokeWidth="3.0268"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </Link>
+        </div>
+      </section>
+
+      <section className="cl__feature-section">
+        <div className="cl__feature-box">
+          <h2 className="cl__feature-heading">Connect Us</h2>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="70"
+            height="70"
+            viewBox="0 0 70 70"
+            fill="none"
+            className="cl__connect-icons"
+          >
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M35 52.5C44.665 52.5 52.5 44.665 52.5 35C52.5 25.335 44.665 17.5 35 17.5C25.335 17.5 17.5 25.335 17.5 35C17.5 44.665 25.335 52.5 35 52.5ZM35 46.6667C41.4432 46.6667 46.6667 41.4432 46.6667 35C46.6667 28.5567 41.4432 23.3333 35 23.3333C28.5567 23.3333 23.3333 28.5567 23.3333 35C23.3333 41.4432 28.5567 46.6667 35 46.6667Z"
+              fill="currentColor"
+            />
+            <path
+              d="M52.5 14.5833C50.8891 14.5833 49.5833 15.8891 49.5833 17.4999C49.5833 19.1107 50.8891 20.4166 52.5 20.4166C54.1109 20.4166 55.4166 19.1107 55.4166 17.4999C55.4166 15.8891 54.1109 14.5833 52.5 14.5833Z"
+              fill="currentColor"
+            />
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M4.82407 12.4719C2.91669 16.2154 2.91669 21.1158 2.91669 30.9167V39.0834C2.91669 48.8843 2.91669 53.7849 4.82407 57.5281C6.50185 60.821 9.179 63.4982 12.4719 65.1759C16.2153 67.0834 21.1158 67.0834 30.9167 67.0834H39.0834C48.8842 67.0834 53.7848 67.0834 57.5281 65.1759C60.821 63.4982 63.4982 60.821 65.1759 57.5281C67.0834 53.7849 67.0834 48.8843 67.0834 39.0834V30.9167C67.0834 21.1158 67.0834 16.2154 65.1759 12.4719C63.4982 9.17906 60.821 6.50191 57.5281 4.82413C53.7848 2.91675 48.8842 2.91675 39.0834 2.91675H30.9167C21.1158 2.91675 16.2153 2.91675 12.4719 4.82413C9.179 6.50191 6.50185 9.17906 4.82407 12.4719ZM39.0834 8.75008H30.9167C25.92 8.75008 22.5232 8.75463 19.8978 8.96912C17.3403 9.17807 16.0325 9.5568 15.1201 10.0217C12.9249 11.1402 11.1401 12.925 10.0216 15.1202C9.55674 16.0325 9.17801 17.3404 8.96906 19.8978C8.75457 22.5233 8.75002 25.92 8.75002 30.9167V39.0834C8.75002 44.0802 8.75457 47.4767 8.96906 50.1023C9.17801 52.6599 9.55674 53.9677 10.0216 54.8801C11.1401 57.0752 12.9249 58.8599 15.1201 59.9784C16.0325 60.4433 17.3403 60.8222 19.8978 61.031C22.5232 61.2454 25.92 61.2501 30.9167 61.2501H39.0834C44.0802 61.2501 47.4766 61.2454 50.1022 61.031C52.6599 60.8222 53.9677 60.4433 54.88 59.9784C57.0751 58.8599 58.8598 57.0752 59.9783 54.8801C60.4433 53.9677 60.8221 52.6599 61.031 50.1023C61.2453 47.4767 61.25 44.0802 61.25 39.0834V30.9167C61.25 25.92 61.2453 22.5233 61.031 19.8978C60.8221 17.3404 60.4433 16.0325 59.9783 15.1202C58.8598 12.925 57.0751 11.1402 54.88 10.0217C53.9677 9.5568 52.6599 9.17807 50.1022 8.96912C47.4766 8.75463 44.0802 8.75008 39.0834 8.75008Z"
+              fill="currentColor"
+            />
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="70"
+            height="70"
+            viewBox="0 0 70 70"
+            fill="none"
+            className="cl__connect-icons"
+          >
+            <g opacity="1">
+              <path
+                d="M48.2377 18.644L35.1409 28.865L21.7447 18.644V18.6468L21.7609 18.6606V32.9727L34.9899 43.4145L48.2377 33.3759V18.644Z"
+                fill="currentColor"
+              />
+              <path
+                d="M51.6756 16.1577L48.2361 18.6439V33.3758L59.0588 25.0666V20.061C59.0588 20.061 57.7452 12.9119 51.6756 16.1577Z"
+                fill="currentColor"
+              />
+              <path
+                d="M48.2361 33.3759V52.4835H56.5311C56.5311 52.4835 58.8917 52.2404 59.0614 49.5498V25.0667L48.2361 33.3759Z"
+                fill="currentColor"
+              />
+              <path
+                d="M21.7615 52.5004V32.9728L21.7447 32.959L21.7615 52.5004Z"
+                fill="currentColor"
+              />
+              <path
+                d="M21.7441 18.6464L18.3235 16.1741C12.2539 12.9282 10.9375 20.0746 10.9375 20.0746V25.08L21.7441 32.9585V18.6464Z"
+                fill="currentColor"
+              />
+              <path
+                d="M21.7447 18.6472V32.9593L21.7615 32.9731V18.661L21.7447 18.6472Z"
+                fill="currentColor"
+              />
+              <path
+                d="M10.9375 25.0837V49.5669C11.1048 52.2604 13.4678 52.5008 13.4678 52.5008H21.7629L21.7441 32.9594L10.9375 25.0837Z"
+                fill="currentColor"
+              />
+            </g>
+          </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="70"
+            height="70"
+            viewBox="0 0 70 70"
+            fill="none"
+            className="cl__connect-icons"
+          >
+            <g clipPath="url(#clip0_22_1168)">
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M62.6799 11.4281C63.7888 11.1872 64.562 10.9503 65.1955 10.7016C66.0832 10.3529 66.8191 9.93525 67.9821 9.23184C68.9592 8.64066 70.2116 8.58918 71.2425 9.09779C72.2734 9.6064 72.9164 10.5929 72.9164 11.6662C72.9164 14.8189 72.4878 17.4029 71.4958 19.6769C70.6609 21.5897 69.488 23.1433 68.0852 24.5573C67.4927 34.3664 64.3952 42.0696 59.6598 47.9056C54.7515 53.9544 48.2212 57.8281 41.3373 59.9975C34.4735 62.1602 27.2213 62.6435 20.7243 61.9111C14.2699 61.1837 8.30361 59.2248 4.14502 56.2601C3.00619 55.4481 2.60587 54.0352 3.16967 52.8178C3.73349 51.6004 5.12028 50.8832 6.54853 51.0704C10.6402 51.6062 14.579 50.7534 17.8177 49.5342C17.1802 49.2163 16.579 48.8721 16.0203 48.5175C13.069 46.6447 10.6879 44.1022 9.6162 42.1373C9.17269 41.3244 9.16811 40.368 9.60383 39.5516C9.82859 39.1302 10.1573 38.7711 10.5563 38.4973C6.24731 35.2373 4.50756 30.7284 4.50756 27.7078C4.50756 26.8097 4.95899 25.9616 5.73128 25.4089C6.05602 25.1765 6.42224 25.0072 6.80829 24.9052C6.48585 24.0397 6.23563 23.1653 6.04491 22.3187C5.19928 18.5654 5.27434 14.329 6.19347 10.9588C6.50799 9.80546 7.55462 8.94257 8.83895 8.77766C10.1233 8.61278 11.3882 9.1789 12.0363 10.2086C15.4647 15.656 21.7885 18.9857 27.6739 20.9581C30.4409 21.8855 33.0035 22.4764 34.9244 22.8397C35.339 19.2796 36.4233 16.3437 38.0877 14.0119C40.2835 10.9354 43.346 9.11521 46.6347 8.30358C52.3069 6.90388 58.6009 8.49853 62.6799 11.4281ZM33.9342 28.6079C31.7544 28.2066 28.7584 27.5325 25.4888 26.4368C21.1704 24.9896 16.1558 22.7329 11.9553 19.2374C12.0305 19.8806 12.1372 20.5184 12.277 21.1389C12.981 24.2636 14.2891 26.0136 15.4759 26.5576C16.9275 27.2229 17.6002 28.783 17.0371 30.1784C16.2748 32.0675 14.2697 32.2223 12.4478 31.805C13.9131 33.8186 16.5468 35.8265 20.9397 36.4976C22.4548 36.7292 23.5732 37.9198 23.598 39.3276C23.6228 40.7355 22.5468 41.9585 21.0406 42.2347L18.271 42.7425C18.6947 43.0799 19.1534 43.411 19.6425 43.7213C21.86 45.1286 24.0864 45.7356 26.0085 45.2951C27.4481 44.9653 28.9454 45.5912 29.6172 46.8042C30.2891 48.017 29.9571 49.4946 28.8172 50.3652C26.7683 51.9285 24.3756 53.183 21.9775 54.2239C20.8517 54.7128 19.5936 55.1952 18.2272 55.6199C19.2781 55.8255 20.3716 55.9941 21.5009 56.1215C27.1346 56.7565 33.4051 56.3283 39.2685 54.4809C45.1119 52.6396 50.513 49.4039 54.5539 44.4242C58.5888 39.4513 61.4047 32.5694 61.7823 23.225C61.8119 22.4893 62.1441 21.7912 62.7121 21.2706C64.1426 19.9591 65.325 18.4559 65.9066 16.6666C64.8887 16.9575 63.7427 17.2092 62.3777 17.4485C61.342 17.6299 60.2758 17.3294 59.5303 16.6461C57.0978 14.4162 52.2869 12.9498 48.2889 13.9364C46.4075 14.4007 44.6973 15.4058 43.4128 17.2055C42.1016 19.0429 41.0984 21.9054 41.0984 26.2496C41.0984 27.075 40.7169 27.8616 40.0487 28.4147C38.4642 29.7257 35.7975 28.9508 33.9342 28.6079Z"
+                fill="currentColor"
+              />
+            </g>
+            <defs>
+              <clipPath id="clip0_22_1168">
+                <rect width="70" height="70" fill="white" />
+              </clipPath>
+            </defs>
+          </svg>
+        </div>
+        <div className="cl__feature-box cl__feature-image">
+          <Image
+            src={"/connect.svg"}
+            alt="People connecting with each other to share info about curlylogic.dev"
+            fill
+            priority={true}
+          />
+        </div>
+      </section>
+
+      <footer className="cl__footer">
+        &copy; curlylogic {new Date().getFullYear()}
+      </footer>
+    </>
   );
 };
 

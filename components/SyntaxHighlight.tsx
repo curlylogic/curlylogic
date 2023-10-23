@@ -8,7 +8,7 @@ const SyntaxHighlight = ({
   value: { language: string; code: string };
 }) => {
   return (
-    <div className="cl__code-syntax__wrapper">
+    <div className={`cl__code-syntax__wrapper`}>
       <CopyCode value={value} />
       <SyntaxHighlighter
         language={value.language}

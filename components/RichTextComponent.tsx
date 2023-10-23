@@ -1,8 +1,12 @@
-// "use client";
-
 import ImageBuilder from "@cl/components/ImageBuilder";
 import SyntaxHighlight from "@cl/components/SyntaxHighlight";
 import { PortableTextReactComponents } from "@portabletext/react";
+import { Fira_Code } from "next/font/google";
+
+const fira = Fira_Code({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+});
 
 const components: Partial<PortableTextReactComponents> = {
   types: {
@@ -39,6 +43,9 @@ const components: Partial<PortableTextReactComponents> = {
     em: ({ children }) => <em className="cl__emphasis">{children}</em>,
     strong: ({ children }) => (
       <strong className="cl__strong">{children}</strong>
+    ),
+    code: ({ children }) => (
+      <code className={`${fira.className} cl__code`}>{children}</code>
     ),
 
     link: ({ value, children }) => {

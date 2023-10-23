@@ -1,8 +1,8 @@
 const Banner = ({ heading }: { heading: string }) => {
   return (
-    <div className="cl__banner">
-      <h2>{heading}</h2>
-    </div>
+    <section className="cl__banner">
+      <h1 className="cl__banner-title">{heading}</h1>
+    </section>
   );
 };
 

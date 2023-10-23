@@ -1,10 +1,11 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const Logo = () => {
   return (
-    <h1 className="cl__logo">
-      <Link href={"/"}>curlylogic</Link>
-    </h1>
+    <Link href={"/"}>
+      <Image src={"/logo.svg"} alt="curlylogic.dev logo" fill priority={true} />
+    </Link>
   );
 };
 

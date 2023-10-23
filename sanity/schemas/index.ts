@@ -1,5 +1,6 @@
-import blog from "./blog-schema";
+import article from "./article-schema";
+import snippet from "./snippet-schema";
 
-const schemas = [blog];
+const schemas = [article, snippet];
 
 export default schemas;

@@ -1,8 +1,8 @@
 import { Rule } from "sanity";
 
-const blog = {
-  name: "blog",
-  title: "Blog",
+const snippet = {
+  name: "snippet",
+  title: "Snippet",
   type: "document",
   fields: [
     {
@@ -10,29 +10,21 @@ const blog = {
       title: "Title",
       type: "string",
       description: "Make it unique and impactful.",
-      validation: (Rule: Rule) => [
-        Rule.required(),
-        Rule.max(120).error(`A title shouldn't be more than 120 characters.`),
-      ],
+      validation: (Rule: Rule) => [Rule.required()],
     },
     {
       name: "slug",
       title: "Slug",
       type: "slug",
-      options: { source: "title", maxLength: 125 },
+      options: { source: "title" },
       validation: (Rule: Rule) => Rule.required(),
     },
     {
-      name: "subtitle",
-      title: "Subtitle",
+      name: "description",
+      title: "Description",
       type: "string",
       description: "Make it give a brief idea about content.",
-      validation: (Rule: Rule) => [
-        Rule.required(),
-        Rule.max(250).error(
-          `A subtitle shouldn't be more than 250 characters.`
-        ),
-      ],
+      validation: (Rule: Rule) => [Rule.required()],
     },
     {
       name: "icon",
@@ -49,12 +41,11 @@ const blog = {
       validation: (Rule: Rule) => Rule.required(),
     },
     {
-      name: "publishedDate",
-      title: "Published Date",
-      type: "date",
+      name: "category",
+      title: "Category",
+      type: "string",
       options: {
-        dateFormat: "MMM DD, YYYY",
-        calendarTodayLabel: "Today",
+        list: ["html/css", "javascript", "frontend", "python", "others"],
       },
       validation: (Rule: Rule) => Rule.required(),
     },
@@ -88,4 +79,4 @@ const blog = {
   ],
 };
 
-export default blog;
+export default snippet;
