@@ -108,13 +108,24 @@ p:empty {
   padding: 0 var(--padding-inner);
 
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
+
+  @media screen and (width < 450px) {
+    flex-direction: column;
+
+    padding: var(--padding-horizontal-outer) var(--padding-inner);
+  }
 
   a {
     width: 8rem;
     height: 8rem;
     position: relative;
+
+    @media screen and (width < 450px) {
+      margin-bottom: var(--padding-horizontal-outer);
+    }
   }
 }
 
@@ -162,6 +173,10 @@ p:empty {
 
   @media screen and (width < 770px) {
     flex-direction: column;
+  }
+
+  @media screen and (width < 450px) {
+    min-height: 45rem;
   }
 }
 
@@ -241,6 +256,10 @@ p:empty {
 
   @media screen and (width < 770px) {
     order: 1;
+  }
+
+  @media screen and (width < 450px) {
+    min-height: 20rem;
   }
 }
 
@@ -399,11 +418,15 @@ p:empty {
   box-shadow: var(--shadow-section);
 
   color: var(--color-off-white);
+
+  @media screen and (width < 450px) {
+    padding: var(--padding-inner) calc(var(--padding-inner) / 2);
+  }
 }
 
 [class^="cl__heading"] {
   margin-bottom: 1.5rem;
-  line-height: 1.75;
+  line-height: 1.5;
 }
 
 .cl__heading-2 {
@@ -439,6 +462,10 @@ p:empty {
   font-size: 1.8rem;
   line-height: 1.5;
   margin-bottom: 3rem;
+
+  @media screen and (width < 450px) {
+    padding-left: 3rem;
+  }
 }
 
 .cl__strong {
@@ -459,6 +486,10 @@ p:empty {
 
 .cl__strike-through {
   text-decoration: line-through;
+}
+
+.cl__link {
+  color: var(--color-green);
 }
 
 .cl__quote {

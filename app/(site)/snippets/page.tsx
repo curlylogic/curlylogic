@@ -2,6 +2,8 @@ import { getSnippets } from "@cl/sanity/sanity-utils";
 import Banner from "@cl/components/Banner";
 import ArticleCard from "@cl/components/ArticleCard";
 
+export const dynamic = "force-dynamic";
+
 const Snippets = async () => {
   const snippets = await getSnippets();
 

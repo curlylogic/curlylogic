@@ -53,7 +53,7 @@ const components: Partial<PortableTextReactComponents> = {
         ? "_blank"
         : undefined;
       return (
-        <a href={value?.href} target={target}>
+        <a className="cl__link" href={value?.href} target={target}>
           {children}
         </a>
       );
